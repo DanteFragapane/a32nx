@@ -163,9 +163,12 @@ export const Ground = ({
     };
 
     return (
-        <div className="wrapper flex-grow flex flex-col">
-            <img className="airplane w-full" src={fuselage} />
-            <div className="left-1/4 grid grid-cols-2 control-grid absolute top-12">
+        <div className="relative h-full flex-grow flex flex-col">
+            <div className="flex">
+                <h1 className="mt-6 text-3xl text-white">Ground</h1>
+            </div>
+            <img className="airplane w-full" src={fuselage} alt="fuselage" />
+            <div className="left-72 grid grid-cols-2 control-grid absolute top-16">
 
                 <div>
                     <h1 className="text-white font-medium text-xl text-center pb-1">Pax</h1>
@@ -194,7 +197,7 @@ export const Ground = ({
                 </div>
             </div>
 
-            <div className="left-1/4 grid grid-cols-1 control-grid absolute top-48">
+            <div className="left-72 grid grid-cols-1 control-grid absolute top-48">
                 <div>
                     <h1 className="text-white font-medium text-xl text-center pb-1">Fuel</h1>
                     <Button
@@ -208,7 +211,7 @@ export const Ground = ({
                 </div>
             </div>
 
-            <div className="right-1/4 grid grid-cols-2 control-grid absolute top-12">
+            <div className="right-72 grid grid-cols-2 control-grid absolute top-16">
                 <div>
                     <h1 className="text-white font-medium text-xl text-center pb-1">Baggage</h1>
                     <Button
@@ -232,7 +235,7 @@ export const Ground = ({
                     </Button>
                 </div>
             </div>
-            <div className="right-1/4 grid grid-cols-2 control-grid absolute bottom-36">
+            <div className="right-72 grid grid-cols-2 control-grid absolute bottom-36">
                 <div>
                     <h1 className="text-white font-medium text-xl text-center pb-1">Door Aft</h1>
                     <DoorToggle
@@ -257,7 +260,7 @@ export const Ground = ({
                 </div>
             </div>
 
-            <div className="left-0 ml-4 grid grid-cols-3 absolute bottom-16 control-grid">
+            <div className="left-0 ml-4 grid grid-cols-3 absolute bottom-2 control-grid">
                 <div>
                     <h1 className="text-white font-medium text-xl text-center">Call Tug</h1>
                     <Button
