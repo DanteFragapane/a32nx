@@ -29,17 +29,21 @@ const FlightWidget = (props: FlightWidgetProps) => {
         const sta = new Date(parseInt(simbriefData.schedIn) * 1000);
         schedInParsed = `${sta.getUTCHours().toString().padStart(2, '0')}:${sta.getUTCMinutes().toString().padStart(2, '0')}z`;
     }
+
     if (simbriefData.schedOut !== '--:--') {
         const std = new Date(parseInt(simbriefData.schedOut) * 1000);
         schedOutParsed = `${std.getUTCHours().toString().padStart(2, '0')}:${std.getUTCMinutes().toString().padStart(2, '0')}z`;
     }
+
     if (simbriefData.cruiseAltitude !== 0) {
         const flightLevel = (simbriefData.cruiseAltitude / 100);
         crzAlt = `FL${flightLevel}`;
     }
+
     if (simbriefData.weather.avgWindDir !== '---' && simbriefData.weather.avgWindSpeed !== '---') {
         avgWind = `${simbriefData.weather.avgWindDir}/${simbriefData.weather.avgWindSpeed}`;
     }
+
     if (simbriefData.weights.estZeroFuelWeight !== 0) {
         const eZfwUnround = simbriefData.weights.estZeroFuelWeight / 100;
         const eZfw = Math.round(eZfwUnround) / 10;
