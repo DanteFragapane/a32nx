@@ -116,6 +116,7 @@ class Dispatch extends React.Component<DispatchProps, DispatchState> {
     render() {
         return (
             <div className="w-full">
+                <h1 className="text-3xl pt-6 text-white">Dispatch</h1>
                 <Navbar tabs={this.tabs} onSelected={(index) => this.handleClick(index)} />
                 <div>
                     {this.currentPage()}

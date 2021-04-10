@@ -360,8 +360,8 @@ const Settings = (props: {simbriefUsername, setSimbriefUsername}) => (
                 <IntegrationSettings simbriefUsername={props.simbriefUsername} setSimbriefUsername={props.setSimbriefUsername} />
 
                 <h1 className="text-4xl text-center text-gray-700 pt-10">flyPadOS</h1>
-                <h1 className="text-xl text-center text-gray-600 py-2">vAlpha</h1>
-                <h1 className="text-md text-center text-gray-700 py-2">Copyright &copy; 2020-2021 FlyByWire Simulations</h1>
+                <h1 className="text-xl text-center text-gray-600 py-2">v2.0.1-alpha</h1>
+                <h1 className="text-md text-center text-gray-700 py-2">Copyright 2020-2021, FlyByWire Simulations.</h1>
             </div>
         </div>
     </div>
