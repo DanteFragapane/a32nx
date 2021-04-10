@@ -11,8 +11,8 @@ type ToolbarState = {
 };
 
 const c = {
-    active: 'cursor-pointer py-4 bg-white bg-opacity-5 py-4 mx-5 rounded-lg mt-2',
-    inactive: 'cursor-pointer hover:bg-white hover:bg-opacity-5 transition duration-300 ease-in-out py-4 mx-5 rounded-lg mt-2',
+    active: 'py-4 bg-white bg-opacity-5 py-4 mx-5 rounded-lg mt-2',
+    inactive: 'hover:bg-white hover:bg-opacity-5 transition duration-150 py-4 mx-5 rounded-lg mt-2',
 };
 
 class ToolBar extends React.Component<ToolbarProps, ToolbarState> {
@@ -35,7 +35,7 @@ class ToolBar extends React.Component<ToolbarProps, ToolbarState> {
                     <ul>
                         <li className={this.state.activeIndex === 0 ? c.active : c.inactive}>
                             <a onClick={() => this.handleClick(0)}>
-                                <img src={logo} alt="FlyByWire logo" className="w-10 py-2 mx-auto" />
+                                <img src={logo} alt="FlyByWire" className="w-10 py-2 mx-auto" />
                             </a>
                         </li>
                         <li className={this.state.activeIndex === 1 ? c.active : c.inactive}>
