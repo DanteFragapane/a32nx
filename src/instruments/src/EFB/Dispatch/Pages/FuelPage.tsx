@@ -369,7 +369,7 @@ export const FuelPage = () => {
             <div className="wrapper visible-tank inner-right-tank" style={{ background: formatFuelFilling(RInnCurrent, innerCellGallon) }} />
             <div className="wrapper visible-tank outer-left-tank" style={{ background: formatFuelFilling(LOutCurrent, outerCellGallon) }} />
             <div className="wrapper visible-tank outer-right-tank" style={{ background: formatFuelFilling(ROutCurrent, outerCellGallon) }} />
-            <img className="airplane-fuel w-full" src={fuselage} />
+            <img className="airplane-fuel h-96" src={fuselage} />
             <div className="bg-gray-800 rounded-xl text-white shadow-lg mr-4 overflow-x-hidden refuel-speed">
                 <div className="mb-3.5 flex flex-row justify-between items-center">
                     <span className="text-lg text-gray-300">Refuel Time</span>

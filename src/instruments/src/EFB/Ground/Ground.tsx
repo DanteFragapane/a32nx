@@ -262,7 +262,7 @@ export const Ground = ({
 
             <div className="left-0 ml-4 grid grid-cols-3 absolute bottom-2 control-grid">
                 <div>
-                    <h1 className="text-white font-medium text-xl text-center">Call Tug</h1>
+                    <h1 className="text-white font-medium text-xl text-center pb-1">Call Tug</h1>
                     <Button
                         id="tug-request"
                         onClick={(e) => handlePushBackClick(() => togglePushback(true), e)}
@@ -274,7 +274,7 @@ export const Ground = ({
                 </div>
 
                 <div className="stop">
-                    <h1 className="text-white font-medium text-xl text-center">Pushback</h1>
+                    <h1 className="text-white font-medium text-xl text-center pb-1">Pushback</h1>
                     <Button
                         id="stop"
                         onClick={(e) => handlePushBackClick(() => {

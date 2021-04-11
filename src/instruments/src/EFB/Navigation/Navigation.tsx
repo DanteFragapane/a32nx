@@ -108,10 +108,10 @@ const AuthUi = () => {
 
 const NavigraphChartComponent = (props: NavigraphChartComponentProps) => (
     <div className={props.isFullscreen
-        ? 'relative flex flex-row overflow-scroll'
-        : 'relative flex flex-row overflow-scroll w-2/3'}
+        ? 'relative flex flex-row overflow-x-hidden overflow-y-scroll'
+        : 'relative flex flex-row overflow-x-hidden overflow-y-scroll w-2/3'}
     >
-        <div className="absolute z-10 m-3 bg-navy-light p-2 rounded-lg">
+        <div className="absolute z-10 m-3 bg-navy-lighter p-2 rounded-lg bg-opacity-50">
             <div onClick={() => props.setIsFullscreen(!props.isFullscreen)}>
                 {!props.isFullscreen
                     ? <IconArrowsMaximize size={30} />
@@ -119,7 +119,7 @@ const NavigraphChartComponent = (props: NavigraphChartComponentProps) => (
             </div>
         </div>
 
-        <div className="absolute top-0 right-0 z-10 m-3 bg-navy-light p-2 rounded-lg">
+        <div className="absolute top-0 right-0 z-10 m-3 bg-navy-lighter p-2 rounded-lg bg-opacity-50">
             <div onClick={() => props.setEnableDarkCharts(!props.enableDarkCharts)}>
                 {!props.enableDarkCharts
                     ? <IconMoon size={30} />
@@ -191,18 +191,18 @@ const NavigraphChartSelector = (props: NavigraphChartSelectorProps) => {
                 ? (
                     <>
                         {organizedCharts.map((item) => (
-                            <div className="flex flex-col text-lg rounded-lg bg-navy-light mr-4 pb-2 divide-y divide-gray-700" key={item.name}>
+                            <div className="flex flex-col text-lg rounded-lg bg-navy-lighter mr-4 pb-2 divide-y divide-gray-700" key={item.name}>
                                 <span className="p-1 bg-gray-700 text-center rounded-t-lg">{item.name}</span>
                                 {item.charts.map((chart) => (
                                     <div
-                                        className="flex flex-row bg-navy-light"
+                                        className="flex flex-row bg-navy-medium"
                                         onClick={() => props.handleChartClick((chart as NavigraphChart).fileDay, (chart as NavigraphChart).fileNight, (chart as NavigraphChart).id)}
                                         key={(chart as NavigraphChart).id}
                                     >
                                         {(chart as NavigraphChart).id === props.selectedChartId
                                             ? <span className="w-2 bg-teal-light-contrast"> </span>
-                                            : <span className="w-2 bg-navy-light"> </span>}
-                                        <div className="flex flex-col mx-2 my-2">
+                                            : <span className="w-2 bg-navy-medium"> </span>}
+                                        <div className="flex flex-col m-2">
                                             <span className="">{(chart as NavigraphChart).procedureIdentifier}</span>
                                             <span
                                                 className="mr-auto text-sm bg-gray-700 text-gray-400 rounded-md px-2 mt-0.5"
@@ -220,14 +220,14 @@ const NavigraphChartSelector = (props: NavigraphChartSelectorProps) => {
                     <>
                         {props.selectedTab.charts.map((chart) => (
                             <div
-                                className="flex flex-row bg-navy-light text-lg rounded-lg mr-4"
+                                className="flex flex-row bg-navy-medium text-lg rounded-lg mr-4"
                                 onClick={() => props.handleChartClick((chart as NavigraphChart).fileDay, (chart as NavigraphChart).fileNight, (chart as NavigraphChart).id)}
                                 key={(chart as NavigraphChart).id}
                             >
                                 {(chart as NavigraphChart).id === props.selectedChartId
                                     ? <span className="w-2 bg-teal-light-contrast rounded-l-lg"> </span>
-                                    : <span className="w-2 bg-navy-light rounded-l-lg"> </span>}
-                                <div className="flex flex-col mx-2 my-1">
+                                    : <span className="w-2 bg-navy-medium rounded-l-lg"> </span>}
+                                <div className="flex flex-col m-2">
                                     <span className="">{(chart as NavigraphChart).procedureIdentifier}</span>
                                     <span
                                         className="mr-auto text-sm bg-gray-700 text-gray-400 rounded-md px-2"
@@ -346,13 +346,13 @@ const ChartsUi = (props: ChartsUiProps) => {
             {!isFullscreen
                 ? (
                     <>
-                        <div className="flex flex-col w-1/3 h-full bg-navy-lightest">
+                        <div className="flex flex-col w-1/3 h-full bg-navy-lighter">
                             <input
                                 type="text"
                                 placeholder="ICAO"
                                 value={props.icao}
                                 maxLength={4}
-                                className="w-3/5 text-xl pb-1 mx-6 mt-6 bg-navy-lightest border-b-2 border-teal-light-contrast focus-within:outline-none focus-within:border-teal-medium"
+                                className="w-3/5 text-xl pb-1 mx-6 mt-6 bg-navy-lighter border-b-2 border-teal-light-contrast focus-within:outline-none focus-within:border-teal-medium"
                                 onChange={(event) => handleIcaoChange(event.target.value)}
                             />
                             <div className="flex items-center w-full mt-5 h-9 bg-teal-light-contrast pl-7">
@@ -361,11 +361,11 @@ const ChartsUi = (props: ChartsUiProps) => {
                                     : <span className="text-xl">{airportInfo.name}</span>}
                             </div>
                             <div className="flex flex-col p-6">
-                                <div className="flex flex-row justify-around bg-navy-light rounded-md">
+                                <div className="flex flex-row justify-around bg-navy-lighter rounded-md">
                                     {organizedCharts.map((organizedChart) => (organizedChart.name === selectedTab.name
                                         ? (
                                             <span
-                                                className="py-2 px-2 text-lg rounded-md bg-teal-light-contrast select-none"
+                                                className="flex items-center px-4 py-2 text-white bg-white bg-opacity-5 rounded-lg mr-2"
                                                 onClick={() => setSelectedTab(organizedChart)}
                                                 key={organizedChart.name}
                                             >
@@ -374,7 +374,7 @@ const ChartsUi = (props: ChartsUiProps) => {
                                         )
                                         : (
                                             <span
-                                                className="py-2 px-2 text-lg rounded-md select-none"
+                                                className="flex items-center px-4 py-2 text-white hover:bg-white hover:bg-opacity-5 transition duration-500 rounded-lg mr-2"
                                                 onClick={() => setSelectedTab(organizedChart)}
                                                 key={organizedChart.name}
                                             >
@@ -382,7 +382,7 @@ const ChartsUi = (props: ChartsUiProps) => {
                                             </span>
                                         )))}
                                 </div>
-                                <div className="mt-5 h-144 space-y-4 overflow-scroll">
+                                <div className="mt-5 h-144 space-y-4 overflow-x-hidden overflow-y-scroll">
                                     {props.enableNavigraph
                                         ? (
                                             <NavigraphChartSelector
@@ -453,7 +453,7 @@ const NavigraphNav = (props: ChartsUiProps) => (
                         </>
                     )
                     : (
-                        <div className="flex items-center justify-center h-efb w-full bg-navy-lightest rounded-xl shadow-lg mr-4 overflow-x-hidden">
+                        <div className="flex items-center justify-center h-efb w-full bg-navy-lighter rounded-xl shadow-lg mr-4 overflow-x-hidden">
                             <p className="text-3xl pt-6 text-white mb-6">Insufficient .env file</p>
                         </div>
                     )}

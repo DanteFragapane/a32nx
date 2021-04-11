@@ -103,7 +103,7 @@ const PlaneSettings = () => {
     };
 
     return (
-        <div className="bg-gray-800 rounded-xl px-6 py-4 shadow-lg overflow-scroll h-efb">
+        <div className="bg-gray-800 rounded-xl px-6 py-4 shadow-lg overflow-x-hidden overflow-y-scroll h-efb">
             <h1 className="text-xl font-medium text-white mb-3">Realism</h1>
 
             <div className="divide-y divide-gray-700 flex flex-col">
