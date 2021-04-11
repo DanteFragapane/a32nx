@@ -68,8 +68,8 @@ const PlaneSettings = () => {
     ];
 
     const paxSignsButtons: ButtonType[] = [
-        { name: 'No Portable Device', setting: '0' },
-        { name: 'No Smoking', setting: '1' },
+        { name: 'No Smoking', setting: '0' },
+        { name: 'No Portable Device', setting: '1' },
     ];
 
     const handleSetThrustReductionAlt = (value: string) => {
